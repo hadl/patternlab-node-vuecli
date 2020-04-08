@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html class="{{ htmlClass }}">
+  <head>
+    <title>{{ title }}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../css/pattern-scaffolding.css?{{ cacheBuster }}" media="all" />
+    {#  webpack dev-server css file  #}
+    <link rel="stylesheet" href="/css/app.css">
+
+    <!-- Begin Pattern Lab (Required for Pattern Lab to run properly) -->
+    {{ patternLabHead | raw }}
+    <!-- End Pattern Lab -->
+  </head>
+  <body class="{{ bodyClass }}">
