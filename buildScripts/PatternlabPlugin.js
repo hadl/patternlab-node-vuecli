@@ -2,7 +2,7 @@ const globby = require('globby');
 const minimatch = require('minimatch');
 const { resolve, join } = require('path');
 const fs = require('fs-extra');
-const { info, warn } = require('@vue/cli-shared-utils');
+const { warn, done } = require('@vue/cli-shared-utils');
 const patternlabCore = require('@pattern-lab/core');
 
 const VueService = process.VUE_CLI_SERVICE;
@@ -18,6 +18,7 @@ class PatternlabPlugin {
     this.patternlab = patternlabCore(plConfig);
     this.PlPatternPath = resolve(VueService.context, plConfig.paths.source.patterns);
 
+    this.buildPatternlab();
     // fix html webpack plugin error child compilation failed
     // due to missing index.html inside the content base dir
     // because patternlab build not finished before html plugin init :(
@@ -41,7 +42,6 @@ class PatternlabPlugin {
     patternFiles.forEach(item => {
       compilation.fileDependencies.add(item);
     });
-    info('addPatternLabFiles', 'aftercompile');
 
     if (compilation.contextDependencies && !compilation.contextDependencies.has(this.PlPatternPath)) {
       compilation.contextDependencies.add(this.PlPatternPath);
@@ -98,7 +98,6 @@ class PatternlabPlugin {
   }
 
   watchRun(compilation, callback) {
-    info('watchRun');
     const changedFiles = Array.from(compilation.fileTimestamps.keys()).filter(
       watchfile => {
         return (
@@ -129,7 +128,7 @@ class PatternlabPlugin {
       try {
         this.patternlab.build(options)
           .then(r => {
-            info('Patternlab build complete');
+            done('Patternlab build complete');
           })
           .catch((error) => {
             warn(`Patternlab build error: ${error}`);

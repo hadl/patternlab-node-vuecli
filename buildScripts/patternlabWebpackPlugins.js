@@ -8,17 +8,6 @@ const plConfig = require('../patternlab-config.json');
 const { ifDevelopment } = getIfUtils(process.env.NODE_ENV);
 const contentBaseDir = join(VueService.context, plConfig.paths.public.root);
 
-const patternLabPlugin = new PatternLabPlugin();
-const patternlabWebpackPlugins = [
-  ifDevelopment(
-    patternLabPlugin,
-  ),
-];
-
-if (ifDevelopment()) { patternLabPlugin.buildPatternlab();}
-
-exports.patternlabWebpackPlugins = patternlabWebpackPlugins;
-
 const patternlabVuePluginConfig = (config) => {
   config
     .plugin('html')
@@ -26,6 +15,10 @@ const patternlabVuePluginConfig = (config) => {
       args[0].template = join(contentBaseDir, 'index.html');
       return args;
     });
+
+  if (ifDevelopment()) {
+    config.plugin('patternlabplugin').use(PatternLabPlugin)
+  }
 
   config.devServer.contentBase(contentBaseDir);
 };
