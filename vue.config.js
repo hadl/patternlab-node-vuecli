@@ -1,3 +1,4 @@
+const StyleLintPlugin = require('stylelint-webpack-plugin');
 const {
   patternlabVuePluginConfig
 } = require('./buildScripts/patternlabWebpackPlugins');
@@ -16,5 +17,6 @@ module.exports = {
 
   chainWebpack: (config) => {
     patternlabVuePluginConfig(config);
-  }
+    config.plugin('stylelint-webpack-plugin').use(StyleLintPlugin);
+  },
 };

@@ -26,8 +26,8 @@
     "@vue/cli-plugin-eslint": "~4.3.0",
     "@vue/cli-plugin-router": "~4.3.0",
     "@vue/cli-service": "~4.3.0",
-    "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/cli-shared-utils": "latest",
+    "@vue/eslint-config-airbnb": "^5.0.2",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
@@ -39,6 +39,10 @@
     "minimatch": "latest",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
+    "stylelint": "^13.3.2",
+    "stylelint-config-standard": "^20.0.0",
+    "stylelint-scss": "^3.17.0",
+    "stylelint-webpack-plugin": "^1.2.3",
     "vue-template-compiler": "^2.6.11",
     "webpack-config-utils": "^2.3.1"
   }
