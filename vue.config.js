@@ -8,8 +8,8 @@ module.exports = {
   css: {
     loaderOptions: {
       sass: {
-        prependData: `
-          @import "@/scss/_variables.scss";
+        additionalData: `
+          @import "~@/scss/_variables.scss";
         `,
       },
     },
@@ -17,6 +17,8 @@ module.exports = {
 
   chainWebpack: (config) => {
     patternlabVuePluginConfig(config);
-    config.plugin('stylelint-webpack-plugin').use(StyleLintPlugin);
+    config.plugin('stylelint-webpack-plugin').use(new StyleLintPlugin({
+      files: ['**/*.{vue,scss}'],
+    }));
   },
 };
