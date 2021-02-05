@@ -21,4 +21,11 @@ module.exports = {
       files: ['**/*.{vue,scss}'],
     }));
   },
+
+  devServer: {
+    overlay: {
+      warnings: true,
+      errors: true,
+    },
+  },
 };
