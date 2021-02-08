@@ -1,0 +1,445 @@
+Index: source/_patterns/atoms/global/typography.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/source/_patterns/atoms/global/typography.twig b/source/_patterns/atoms/global/typography.twig
+new file mode 100644
+--- /dev/null	(date 1601284027073)
++++ b/source/_patterns/atoms/global/typography.twig	(date 1601284027073)
+@@ -0,0 +1,95 @@
++<main>
++  {% for i in 1..6 %}
++    <h{{ i }}>{{ headline.short }} -- H{{ i }}</h{{ i }}>
++    <p>{{ excerpt.medium }}</p>
++  {% endfor %}
++
++  <h2>Unordered List</h2>
++  <h3>With lines</h3>
++  <ul>
++    <li>Lorem ipsum.</li>
++    <li>Esse, nesciunt!</li>
++    <li>Laudantium, porro!</li>
++  </ul>
++
++  <h3>Without lines</h3>
++  <p>Place <code>class="ul-no-lines"</code> on container</p>
++  <div class="ul-no-lines">
++    <ul>
++      <li>Lorem ipsum.</li>
++      <li>Esse, nesciunt!</li>
++      <li>Laudantium, porro!</li>
++    </ul>
++  </div>
++
++  <h2>Ordered List</h2>
++  <ol>
++    <li>Lorem ipsum.</li>
++    <li>Iure, voluptatem.</li>
++    <li>Molestias, nobis.</li>
++  </ol>
++
++  <h2>Horizontal Rule</h2>
++  <hr>
++
++  <h2>Inline Elements</h2>
++  <p><a href="#">This is a text link</a></p>
++  <p><strong>Strong is used to indicate strong importance</strong></p>
++  <p><em>This text has added emphasis</em></p>
++  <p>The
++    <b>b element</b> is stylistically different text from normal text, without any special importance
++  </p>
++  <p>The <i>i element</i> is text that is set off from the normal text</p>
++  <p>The
++    <u>u element</u> is text with an unarticulated, though explicitly rendered, non-textual annotation
++  </p>
++  <p>
++    <del>This text is deleted</del>
++    and
++    <ins>This text is inserted</ins>
++  </p>
++  <p><s>This text has a strikethrough</s></p>
++  <p>Superscript<sup>®</sup></p>
++  <p>Subscript for things like H<sub>2</sub>O</p>
++  <p><small>This small text is small for for fine print, etc.</small></p>
++  <p>Abbreviation: <abbr title="HyperText Markup Language">HTML</abbr></p>
++  <p>Keybord input: <kbd>Cmd</kbd></p>
++  <p>
++    <q cite="https://developer.mozilla.org/en-US/docs/HTML/Element/q">This text is a short inline quotation</q>
++  </p>
++  <p><cite>This is a citation</cite></p>
++  <p>The <dfn>dfn element</dfn> indicates a definition.</p>
++  <p>The
++    <mark>mark element</mark>
++    indicates a highlight
++  </p>
++  <p><code>This is what inline code looks like.</code></p>
++  <p><samp>This is sample output from a computer program</samp></p>
++  <p>The <var>variarble element</var>, such as <var>x</var> = <var>y</var></p>
++
++  <h2>Address</h2>
++  <address>
++    Mozilla Foundation<br>
++    1981 Landings Drive<br>
++    Building K<br>
++    Mountain View, CA 94043-0801<br>
++    USA
++  </address>
++
++  <h2>Blockquote</h2>
++  <blockquote>
++    <p>A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.</p>
++  </blockquote>
++
++  <h2>Definition List</h2>
++  <dl>
++    <dt>Definition List</dt>
++    <dd>A number of connected items or names written or printed consecutively, typically one below the other.</dd>
++    <dt>This is a term.</dt>
++    <dd>This is the definition of that term, which both live in a <code>dl</code>.</dd>
++    <dt>Here is another term.</dt>
++    <dd>And it gets a definition too, which is this line.</dd>
++    <dt>Here is term that shares a definition with the term below.</dt>
++    <dd>And it gets a definition too, which is this line.</dd>
++  </dl>
++</main>
+Index: source/_patterns/atoms/global/colors.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/source/_patterns/atoms/global/colors.twig b/source/_patterns/atoms/global/colors.twig
+new file mode 100644
+--- /dev/null	(date 1612777987572)
++++ b/source/_patterns/atoms/global/colors.twig	(date 1612777987572)
+@@ -0,0 +1,80 @@
++<h2>Brand Colors</h2>
++<ul class="sg-colors">
++  <li>
++    <span class="sg-swatch bg-primary" style="background-color: #1779ba"></span>
++    <span class="sg-label">
++      $primary-color
++    </span>
++  </li>
++  <li>
++    <span class="sg-swatch bg-secondary" style="background-color: #767676;"></span>
++    <span class="sg-label">
++      $secondary-color
++    </span>
++  </li>
++</ul>
++
++<h2>Neutral Colors</h2>
++<ul class="sg-colors">
++  <li>
++    <span class="sg-swatch bg-white" style="background-color: #fefefe;"></span>
++    <span class="sg-label">
++      $white
++    </span>
++  </li>
++  <li>
++    <span class="sg-swatch bg-black" style="background-color: #0a0a0a;"></span>
++    <span class="sg-label">
++      $black
++    </span>
++  </li>
++  <li>
++    <span class="sg-swatch bg-light" style="background-color: #f5f5f5;"></span>
++    <span class="sg-label">
++      $light-gray
++    </span>
++  </li>
++  <li>
++    <span class="sg-swatch bg-medium" style="background-color: #cacaca;"></span>
++    <span class="sg-label">
++      $medium-gray
++    </span>
++  </li>
++  <li>
++    <span class="sg-swatch bg-dark" style="background-color: #8a8a8a;"></span>
++    <span class="sg-label">
++      $dark-gray
++    </span>
++  </li>
++</ul>
++
++<style>
++  .sg-colors {
++    display: flex;
++    flex-wrap: wrap;
++    list-style: none;
++    padding: 0;
++    margin: 0;
++  }
++  .sg-colors li {
++    flex: auto;
++    padding: 0.3em;
++    margin: 0 0.5em 0.5em 0;
++    min-width: 5em;
++    max-width: 14em;
++    border: 1px solid #ddd;
++    border-radius: 8px;
++  }
++
++  .sg-swatch {
++    display: block;
++    height: 4em;
++    margin-bottom: 0.3em;
++    border-radius: 5px;
++  }
++
++  .sg-label {
++    font-size: 90%;
++    line-height: 1;
++  }
++</style>
+Index: src/scss/_variables.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/scss/_variables.scss b/src/scss/_variables.scss
+--- a/src/scss/_variables.scss	(revision f9b3acb9d6b42326743f301b86302eee89b2c03d)
++++ b/src/scss/_variables.scss	(date 1612778019969)
+@@ -1,1 +1,22 @@
++/* Set global and also foundation variables here */
++// @see node_modules/foundation-sites/scss/settings/_settings.scss
++
+ // this global variables will also be available in every vue file
++
++$light-gray: #e5e5e5;
++$medium-gray: #c7c7c7;
++$dark-gray: #8a8a8a;
++$black: #0a0a0a;
++$white: #fefefe;
++
++$foundation-palette: (
++  primary: #1779ba,
++  secondary: #767676,
++  success: #3adb76,
++  warning: #ffae00,
++  alert: #cc4b37,
++);
++
++@import "~foundation-sites/scss/foundation";
++
++@include add-foundation-colors;
+Index: package.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/package.json b/package.json
+--- a/package.json	(revision f9b3acb9d6b42326743f301b86302eee89b2c03d)
++++ b/package.json	(date 1612777352609)
+@@ -13,10 +13,12 @@
+   },
+   "dependencies": {
+     "core-js": "^3.8.3",
++    "foundation-sites": "^6.6.3",
+     "vue": "^2.6.12",
+     "vue-router": "^3.5.1"
+   },
+   "devDependencies": {
++    "@fullhuman/postcss-purgecss": "3.0.0",
+     "@pattern-lab/cli": "^5.14.0",
+     "@pattern-lab/core": "^5.14.0",
+     "@pattern-lab/engine-twig-php": "^5.14.0",
+@@ -33,8 +35,8 @@
+     "eslint-plugin-import": "^2.22.1",
+     "eslint-plugin-vue": "^7.5.0",
+     "event-hooks-webpack-plugin": "^2.2.0",
+-    "fs-extra": "latest",
+-    "globby": "latest",
++    "fs-extra": "^9.1.0",
++    "globby": "^11.0.2",
+     "html-webpack-plugin": "^5.0.0",
+     "minimatch": "^3.0.4",
+     "sass": "^1.32.6",
+Index: src/scss/global-styles.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/scss/global-styles.scss b/src/scss/global-styles.scss
+--- a/src/scss/global-styles.scss	(revision f9b3acb9d6b42326743f301b86302eee89b2c03d)
++++ b/src/scss/global-styles.scss	(date 1612777037251)
+@@ -1,1 +1,2 @@
+ @import "variables";
++@import "foundation-local";
+Index: src/scss/_foundation-local.scss
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/scss/_foundation-local.scss b/src/scss/_foundation-local.scss
+new file mode 100644
+--- /dev/null	(date 1612777037263)
++++ b/src/scss/_foundation-local.scss	(date 1612777037263)
+@@ -0,0 +1,55 @@
++/* FOUNDATION INCLUDES */
++// @see node_modules/foundation-sites/scss/foundation.scss
++
++// Global styles
++@include foundation-global-styles;
++@include foundation-forms;
++@include foundation-typography;
++
++// Grids
++@include foundation-xy-grid-classes;
++
++// Generic components
++@include foundation-button;
++//@include foundation-button-group;
++//@include foundation-close-button;
++//@include foundation-label;
++//@include foundation-progress-bar;
++//@include foundation-slider;
++//@include foundation-switch;
++//@include foundation-table;
++
++// Basic components
++//@include foundation-badge;
++//@include foundation-breadcrumbs;
++//@include foundation-callout;
++//@include foundation-card;
++//@include foundation-dropdown;
++//@include foundation-pagination;
++//@include foundation-tooltip;
++
++// Containers
++//@include foundation-accordion;
++//@include foundation-media-object;
++//@include foundation-orbit;
++//@include foundation-responsive-embed;
++//@include foundation-tabs;
++//@include foundation-thumbnail;
++
++// Menu-based containers
++//@include foundation-menu;
++//@include foundation-menu-icon;
++//@include foundation-accordion-menu;
++//@include foundation-drilldown-menu;
++//@include foundation-dropdown-menu;
++
++// Layout components
++//@include foundation-off-canvas;
++//@include foundation-reveal;
++//@include foundation-sticky;
++//@include foundation-title-bar;
++//@include foundation-top-bar;
++
++// Helpers
++@include foundation-flex-classes;
++// @include foundation-visibility-classes;
+Index: source/_patterns/atoms/global/buttons.twig
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/source/_patterns/atoms/global/buttons.twig b/source/_patterns/atoms/global/buttons.twig
+new file mode 100644
+--- /dev/null	(date 1612778082816)
++++ b/source/_patterns/atoms/global/buttons.twig	(date 1612778082816)
+@@ -0,0 +1,12 @@
++<div>
++  <h2>Default Buttons</h2>
++  <p>
++    <button class="button primary">Primary Color</button>
++    <button class="button secondary">Secondary Color</button>
++  </p>
++{#  <h2>Special Buttons</h2>#}
++{#  <p>#}
++{#    <button class="button hollow primary">Hollow primary</button>#}
++{#    <button class="button hollow primary small">Hollow primary Small</button>#}
++{#  </p>#}
++</div>
+Index: source/_patterns/atoms/global/typography.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/source/_patterns/atoms/global/typography.md b/source/_patterns/atoms/global/typography.md
+new file mode 100644
+--- /dev/null	(date 1612777956092)
++++ b/source/_patterns/atoms/global/typography.md	(date 1612777956092)
+@@ -0,0 +1,3 @@
++---
++order: -1
++---
+Index: source/_patterns/atoms/global/buttons.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/source/_patterns/atoms/global/buttons.md b/source/_patterns/atoms/global/buttons.md
+new file mode 100644
+--- /dev/null	(date 1612777956097)
++++ b/source/_patterns/atoms/global/buttons.md	(date 1612777956097)
+@@ -0,0 +1,3 @@
++---
++order: -2
++---
+Index: source/_patterns/atoms/global/colors.md
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/source/_patterns/atoms/global/colors.md b/source/_patterns/atoms/global/colors.md
+new file mode 100644
+--- /dev/null	(date 1612777956103)
++++ b/source/_patterns/atoms/global/colors.md	(date 1612777956103)
+@@ -0,0 +1,3 @@
++---
++order: -3
++---
+Index: postcss.config.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/postcss.config.js b/postcss.config.js
+new file mode 100644
+--- /dev/null	(date 1612777523819)
++++ b/postcss.config.js	(date 1612777523819)
+@@ -0,0 +1,40 @@
++/*
++ * Taken from
++ * https://github.com/FullHuman/purgecss/blob/master/packages/vue-cli-plugin-purgecss/generator/templates/postcss.config.js
++ * https://github.com/foundation/foundation-sites/issues/11974
++ */
++
++// eslint-disable-next-line import/no-extraneous-dependencies
++const purgecss = require('@fullhuman/postcss-purgecss');
++
++// const IN_PRODUCTION = process.env.NODE_ENV === 'production';
++const IN_PRODUCTION = true;
++
++module.exports = {
++  plugins: [
++    IN_PRODUCTION && purgecss({
++      content: ['./public/**/*.html', './src/**/*.vue', './source/**/*.twig'],
++      defaultExtractor(content) {
++        const contentWithoutStyleBlocks = content.replace(/<style[^]+?<\/style>/gi, '');
++        return contentWithoutStyleBlocks.match(/[A-Za-z0-9-_/:]*[A-Za-z0-9-_/]+/g) || [];
++      },
++      safelist: {
++        standard: [
++          // /^(js-|is-|has-|sticky-|responsive-|submenu-|first-|opens-|position-)/,
++          /-(leave|enter|appear)(|-(to|from|active))$/,
++          /^(?!(|.*?:)cursor-move).+-move$/,
++          /^router-link(|-exact)-active$/, /data-v-.*/,
++          /^(js-|is-|has-|sticky-|responsive-|submenu-|first-|opens-|position-)/,
++          /^(svg-inline--fa|fa-)/,
++          /^(counter-)/,
++        ],
++        deep: [
++          /^(flickity-)/,
++        ],
++        greedy: [],
++        keyframes: [],
++        variables: []
++      }
++    }),
++  ],
++};
