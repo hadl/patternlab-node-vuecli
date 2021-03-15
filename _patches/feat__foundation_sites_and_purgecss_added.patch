@@ -241,7 +241,7 @@ diff --git a/package.json b/package.json
      "vue-router": "^3.5.1"
    },
    "devDependencies": {
-+    "@fullhuman/postcss-purgecss": "3.0.0",
++    "@fullhuman/postcss-purgecss": "^3.1.3",
      "@pattern-lab/cli": "^5.14.0",
      "@pattern-lab/core": "^5.14.0",
      "@pattern-lab/engine-twig-php": "^5.14.0",
