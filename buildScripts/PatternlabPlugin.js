@@ -74,8 +74,8 @@ class PatternlabPlugin {
     // pattern lab watch file globs
     const watchFiles = [
       ...templateFilePaths,
-      `${plConfig.paths.source.patterns}**/*.(json|md|yaml|yml)`,
-      `${plConfig.paths.source.data}**/*.(json|md|yaml|yml)`,
+      `${plConfig.paths.source.patterns}**/*+(json|md|yaml|yml)`,
+      `${plConfig.paths.source.data}**/*+(json|md|yaml|yml)`,
       `${plConfig.paths.source.meta}**/*`,
       `${plConfig.paths.source.annotations}**/*`
     ]
