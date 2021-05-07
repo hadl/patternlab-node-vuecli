@@ -206,7 +206,7 @@ diff --git a/src/scss/_variables.scss b/src/scss/_variables.scss
 +// @see node_modules/foundation-sites/scss/settings/_settings.scss
 +
  // this global variables will also be available in every vue file
-+
++@import "~foundation-sites/scss/global";
 +$light-gray: #e5e5e5;
 +$medium-gray: #c7c7c7;
 +$dark-gray: #8a8a8a;
