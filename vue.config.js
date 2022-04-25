@@ -1,12 +1,15 @@
-const { getIfUtils } = require('webpack-config-utils');
+const { defineConfig } = require('@vue/cli-service');
+
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 const {
-  patternlabVuePluginConfig
+  patternlabVuePluginConfig,
+  patternlabVueWebpackConfig,
 } = require('./buildScripts/patternlabWebpackPlugins');
-const { ifProduction } = getIfUtils(process.env.NODE_ENV || '');
 
-// vue.config.js
-module.exports = {
+const ifProduction = process.env.NODE_ENV === 'production';
+
+module.exports = defineConfig({
+  transpileDependencies: true,
   css: {
     loaderOptions: {
       sass: {
@@ -18,7 +21,7 @@ module.exports = {
   },
 
   chainWebpack: (config) => {
-    if (!ifProduction()) {
+    if (!ifProduction) {
       patternlabVuePluginConfig(config);
     }
     config.plugin('stylelint-webpack-plugin').use(new StyleLintPlugin({
@@ -26,10 +29,18 @@ module.exports = {
     }));
   },
 
+  configureWebpack: (config) => {
+    if (!ifProduction) {
+      patternlabVueWebpackConfig(config);
+    }
+  },
+
   devServer: {
-    overlay: {
-      warnings: true,
-      errors: true,
+    client: {
+      overlay: {
+        warnings: true,
+        errors: true,
+      },
     },
   },
-};
+});
