@@ -4,7 +4,7 @@ const PatternLabPlugin = require('./PatternlabPlugin');
 
 const plConfig = require('../patternlab-config.json');
 
-const ifDevelopment = process.env.NODE_ENV !== 'production';
+const ifDevelopment = process.env.NODE_ENV === 'development';
 const contentBaseDir = resolve('./', plConfig.paths.public.root);
 
 /**

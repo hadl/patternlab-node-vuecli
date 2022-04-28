@@ -1,3 +1,4 @@
+/* eslint-disable import/no-extraneous-dependencies */
 const { resolve } = require('path');
 const fs = require('fs-extra');
 const { warn, done } = require('@vue/cli-shared-utils');

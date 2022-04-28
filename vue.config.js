@@ -7,6 +7,7 @@ const {
 } = require('./buildScripts/patternlabWebpackPlugins');
 
 const ifProduction = process.env.NODE_ENV === 'production';
+const ifDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = defineConfig({
   transpileDependencies: true,
@@ -21,7 +22,7 @@ module.exports = defineConfig({
   },
 
   chainWebpack: (config) => {
-    if (!ifProduction) {
+    if (ifDevelopment) {
       patternlabVuePluginConfig(config);
     }
     config.plugin('stylelint-webpack-plugin').use(new StyleLintPlugin({
@@ -30,7 +31,7 @@ module.exports = defineConfig({
   },
 
   configureWebpack: (config) => {
-    if (!ifProduction) {
+    if (ifDevelopment) {
       patternlabVueWebpackConfig(config);
     }
   },
