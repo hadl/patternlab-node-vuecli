@@ -1,8 +1,5 @@
 # patternlab-node-vuecli
-My first try to make patternlab node with Twig-PHP, Vue-Cli-Service and Webpack work together.
-
-Thank you, https://github.com/Comcast/patternlab-edition-node-webpack for your inspiration!!!
-
+PatternLab node with Twig-PHP, Vue-Cli-Service and Webpack work together.
 
 # Note
 **This repo is for personal use.**
@@ -18,3 +15,7 @@ https://github.com/pattern-lab/patternlab-node
 
 ## Vue CLI  
 https://github.com/vuejs/vue-cli
+
+---
+
+Thank you, https://github.com/Comcast/patternlab-edition-node-webpack for your inspiration!!!
