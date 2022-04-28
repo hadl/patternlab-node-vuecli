@@ -19,6 +19,7 @@
   "devDependencies": {
     "@babel/core": "^7.12.16",
     "@babel/eslint-parser": "^7.12.16",
+    "@fullhuman/postcss-purgecss": "^4.1.3",
     "@pattern-lab/cli": "^5.16.2",
     "@pattern-lab/core": "^5.16.2",
     "@pattern-lab/engine-twig-php": "^5.16.2",
