@@ -18,12 +18,16 @@ module.exports = {
           ) || []
         );
       },
-      safelist: [
-        /-(leave|enter|appear)(|-(to|from|active))$/,
-        /^(?!(|.*?:)cursor-move).+-move$/,
-        /^router-link(|-exact)-active$/,
-        /data-v-.*/,
-      ],
+      safelist: {
+        standard: [
+          /-(leave|enter|appear)(|-(to|from|active))$/,
+          /^(?!(|.*?:)cursor-move).+-move$/,
+          /^router-link(|-exact)-active$/,
+          /data-v-.*/,
+          /^(svg-inline--fa|fa-)/, // fontawesome
+        ],
+        deep: [],
+      },
     }),
   ],
 };
