@@ -6,6 +6,7 @@ const {
   patternlabVueWebpackConfig,
 } = require('./buildScripts/patternlabWebpackPlugins');
 
+// eslint-disable-next-line no-unused-vars
 const ifProduction = process.env.NODE_ENV === 'production';
 const ifDevelopment = process.env.NODE_ENV === 'development';
 
