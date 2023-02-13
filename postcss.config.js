@@ -26,7 +26,9 @@ module.exports = {
           /data-v-.*/,
           /^(svg-inline--fa|fa-)/, // fontawesome
         ],
-        deep: [],
+        deep: [
+          /^(flickity-)/,
+        ],
       },
     }),
   ],
