@@ -1,7 +1,7 @@
 {
   "name": "patternlab-node-vuecli",
-  "version": "1.0.0",
-  "description": "Version 1.0.0 will use Vue 2",
+  "version": "2.0.0",
+  "description": "Version 2.0.0 will use Vue 3",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "core-js": "^3.27.2",
-    "vue": "^2.6.14"
+    "vue": "^3.2.47"
   },
   "devDependencies": {
     "@babel/core": "^7.20.12",
@@ -39,8 +39,7 @@
     "stylelint": "^14.16.1",
     "stylelint-config-recommended-vue": "^1.4.0",
     "stylelint-config-standard-scss": "^6.1.0",
-    "stylelint-webpack-plugin": "^4.0.0",
-    "vue-template-compiler": "^2.6.14"
+    "stylelint-webpack-plugin": "^4.0.0"
   },
   "engines": {
     "node": ">= 16.0.0"
