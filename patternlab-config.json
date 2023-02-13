@@ -103,7 +103,11 @@
     }
   ],
   "engines": {
-    "twig": {
+    "twig-php": {
+      "package": "@pattern-lab/engine-twig-php",
+      "fileExtensions": [
+        "twig"
+      ],
       "namespaces": [
         {
           "id": "uikit",
