@@ -11,7 +11,7 @@ const ifProduction = process.env.NODE_ENV === 'production';
 const ifDevelopment = process.env.NODE_ENV === 'development';
 
 module.exports = defineConfig({
-  transpileDependencies: true,
+
   css: {
     loaderOptions: {
       sass: {
